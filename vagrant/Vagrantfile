@@ -1,0 +1,16 @@
+$web_server_ip = "192.168.56.20"
+$vagrant_module_path = "/Users/omer/Projects/vagrant-shell-modules"
+
+Vagrant.configure("2") do |config|
+	config.vbguest.auto_update = false
+
+	config.vm.box = "centos_64"
+	config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/centos-64-x64-vbox4210.box"
+
+	config.vm.network "private_network", ip: $web_server_ip
+
+ 	config.vm.synced_folder "../", "/vagrant"
+ 	config.vm.synced_folder $vagrant_module_path, "/vagrant/vagrant/modules"
+
+ 	config.vm.provision :shell, :path => "bootstrap.sh"
+end
