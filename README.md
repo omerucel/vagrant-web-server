@@ -1,6 +1,11 @@
-vagrant-web-server
-==================
+This is a sample vagrant project for https://github.com/omerucel/vagrant-shell-modules
 
-Development web server project for vagrant.
+# Usage
 
-This repo depends to my other project, omerucel/vagrant-shell-modules. You can install this two repos in your projects dir. 
+```bash
+$ cd Projects
+$ git clone https://github.com/omerucel/vagrant-shell-modules.git
+$ git clone https://github.com/omerucel/vagrant-web-server.git
+$ cd vagrant-web-server/vagrant
+$ vagrant up
+```
